@@ -1,277 +1,48 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
+<html>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>서비스 | 스마트넷코리아</title>
+<head>
+    <title>POD웹</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Noto Sans KR', sans-serif, Arial;
-        }
-
-        body {
-            color: #333;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-        }
-
-        /* 헤더 영역 */
-        header {
-            background-color: #fff;
-            border-bottom: 2px solid #0a2540;
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 18px;
-            color: #0a2540;
-        }
-
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #444;
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        nav a.active {
-            color: #0056b3;
-            font-weight: bold;
-        }
-
-        /* 히어로 배너 (크기 축소 및 Green 바탕색 적용) */
-        .hero {
-            background-color: blue; /* #fff; red, green, pupple, yellow color 배경 변경 */
-            color: #fff;
-            text-align: center;
-            padding: 25px 20px; /* 기존 60px에서 패딩을 줄여 판넬 크기 축소 */
-        }
-
-        .hero h1 {
-            font-size: 24px; /* 기존 32px에서 크기 줄임 */
-            margin-bottom: 5px;
-        }
-
-        .hero p {
-            font-size: 15px; /* 기존 18px에서 크기 줄임 */
-            color: #e8f5e9;
-        }
-
-        /* 메인 콘텐츠 */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 40px;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .sub-title {
-            text-align: center;
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 22px;
-            color: #111;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .service-box {
-            display: flex;
-            align-items: center;
-            background-color: #0a2540;
-            color: white;
-            padding: 10px 20px;
-            margin-bottom: 20px;
-        }
-
-        .service-box .num {
-            font-size: 24px;
-            font-weight: bold;
-            border: 2px solid white;
-            padding: 2px 12px;
-            margin-right: 15px;
-            background: white;
-            color: #0a2540;
-        }
-
-        .service-box .text {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* 테이블 스타일 */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 40px;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 12px 15px;
-            font-size: 14px;
-        }
-
-        th {
-            background-color: #0a2540;
-            color: white;
-            text-align: center;
-            font-weight: normal;
-        }
-
-        td.category {
-            background-color: #f2f2f2;
-            text-align: center;
-            font-weight: bold;
-            vertical-align: middle;
-            width: 25%;
-        }
-
-        td.courses {
-            background-color: #eef5f9;
-        }
-
-        td.courses ul {
-            list-style-type: none;
-        }
-
-        td.courses li {
-            position: relative;
-            padding-left: 15px;
-            margin-bottom: 6px;
-        }
-
-        td.courses li::before {
-            content: "-";
-            position: absolute;
-            left: 0;
-        }
-
-        /* 푸터 */
-        footer {
-            background-color: #222;
-            color: #aaa;
-            padding: 30px 50px;
-            font-size: 13px;
-            line-height: 1.8;
-            margin-top: 50px;
-        }
-
-        footer .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            margin-right: 15px;
-        }
+        #top_bar{
+            width:auto; height: 40px;
+            line-height: 40px;
+            text-align:center; word-spacing:45px;
+            background: #85858532;}    
+        .container{width:630px; margin: 100px auto 0;}
+        #back{position: absolute; top:40px; right:0;}
+        .all{margin: 0 auto; width: 1000px;} 
+        ul{overflow:hidden;}
+        li{list-style: none; float:left; padding:20px; width:150px; font-size: 25px;}
+        li:first-child{border-radius: 10px 0 0 10px;}
+        li:last-child{border-radius: 0 10px 10px 0;}
+        li:nth-child(2n){background-color: rgb(173, 222, 238);}
+        li:nth-child(2n+1){background-color:rgb(165, 208, 245);;}
+        #center{margin: 0 auto; width:1850px;}
     </style>
 </head>
 <body>
-
-    <!-- 헤더 -->
-    <header>
-        <div class="logo">(주)스마트넷코리아</div>
-        <nav>
-            <a href="#">Company</a>
-            <a href="#">솔루션</a>
-            <a href="#" class="active">서비스</a>
-            <a href="#">Contact</a>
-            <a href="#">뉴스 및 공지사항</a>
-        </nav>
-    </header>
-
-    <!-- 히어로 영역 (크기 축소 및 초록색 적용) -->
-    <section class="hero">
-        <h1>스마트한 정보화시대의 동반자</h1>
-        <p>복잡하고 어려운 정보보안 솔루션의 올바른 길잡이가 되드립니다</p>
-    </section>
-
-    <!-- 메인 컨텐츠 -->
-    <div class="container">
-        <p class="sub-title">
-            다수 프로젝트 경험을 보유한 숙련된 기술 전문가가 수준 높은 IT 고객 맞춤 교육과 보안 컨설팅을 제공 합니다
-        </p>
-
-        <h2 class="section-title">고객의 요구에 맞는 맞춤형 교육서비스</h2>
-
-        <!-- 서비스 타이틀 1 -->
-        <div class="service-box">
-            <span class="num">1</span>
-            <span class="text">IT 전문 교육 서비스</span>
-        </div>
-
-        <!-- 교육 과정 테이블 -->
-        <table>
-            <thead>
-                <tr>
-                    <th>교육분야</th>
-                    <th>교육과정명</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="category">클라우드</td>
-                    <td class="courses">
-                        <ul>
-                            <li>클라우드 기반 AI 보안 및 Agentic AI 구현 마스터</li>
-                            <li>Cloud 인프라 아키텍처 설계</li>
-                            <li>클라우드 컴퓨팅 이해와 분석</li>
-                            <li>Hybrid Cloud 아키텍처</li>
-                            <li>클라우드 핵심 이해와 활용</li>
-                            <li>도커, 쿠버네티스, CI/CD 자동화 구현</li>
-                            <li>Cloud 보안 위협 및 대책</li>
-                            <li>SDx 기술을 활용한 소프트웨어정의 데이터센터 기술</li>
-                            <li>IT 인프라 아키텍처 입문</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="category">정보보안</td>
-                    <td class="courses">
-                        <ul>
-                            <li>정보보안 기본 역량 마스터</li>
-                            <li>정보보안 실무 중심의 Security Mastering</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- 서비스 타이틀 2 -->
-        <div class="service-box">
-            <span class="num">2</span>
-            <span class="text">보안 및 클라우드 컨설팅</span>
-        </div>
+ <body>
+    <body bgcolor="blue">
+    <div id="top_bar"> 개인 ㅣ 기업 ㅣ 금융상품 ㅣ 자산관리 ㅣ 퇴직연금  ㅣ카드 </div>
+    <div class="pics">
+        <div id="back"><img src="test3.png"></div>
     </div>
 
-    <!-- 푸터 -->
-    <footer>
-        <div class="footer-links">
-            <a href="#">회사소개</a> |
-            <a href="#">제휴사</a> |
-            <a href="#">뉴스</a> |
-            <a href="#">솔루션</a> |
-            <a href="#">고객사</a> |
-            <a href="#">서비스</a> |
-            <a href="#">Contact</a>
-        </div>
+    <div class="all">
+        <ul>
+            <li>&nbsp; 정보 조회</li>
+            <li>&nbsp;이체 </li>
+            <li>&nbsp; 환율 </li>
+            <li>&nbsp; 예금</li>
+            <li>&nbsp; 대출 </li>
+            <li>&nbsp; 외환 </li>
+            <li>&nbsp; 보험 </li>
+            <li>&nbsp; 카드 </li>
+            <li>&nbsp; 증권 </li>
+        </ul>
         <br>
-        <p>(주)스마트넷코리아</p>
-        <p>Copyright 2015 Smartnetkorea CO., LTD. All Rights Reserved.</p>
-    </footer>
-
+     </div>
+<img width="800" src="https://mblogthumb-phinf.pstatic.net/20120416_141/hrwyfgd_1334540205911hNGUU_JPEG/%B0%ED%C8%AD%C1%FA%C4%C4%C7%BB%C5%CD%B9%D9%C5%C1%C8%AD%B8%E921.jpg?type=w1">
 </body>
 </html>
